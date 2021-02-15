@@ -1,0 +1,32 @@
+.title-page__first-line {
+  font-size: 5rem;
+}
+
+.title-page__second-line {
+  font-size: 9rem;
+  line-height: 8.5rem;
+}
+
+.title-page__third-line {
+  text-align: right;
+  font-size: 4rem;
+}
+
+.bubbles__one {
+  top: 50px;
+  width: 300px;
+  height: 300px;
+}
+
+.bubbles__two {
+  top: 400px;
+  width: 230px;
+  height: 230px;
+}
+
+.bubbles__three {
+  top: 650px;
+  width: 150px;
+  height: 150px;
+}
+/*# sourceMappingURL=medium.css.map */

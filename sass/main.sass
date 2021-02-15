@@ -1,0 +1,224 @@
+@import './colors'
+    
+//////////////////////// RESET ////////////////////////
+*,
+*::before,
+*::after 
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    cursor: none
+
+
+html 
+    scroll-behavior: smooth
+    overflow-y: scroll
+    font-size: 62.5%
+
+body 
+    position: relative
+    font-family: 'Manrope', sans-serif
+    font-size: 1.6rem
+    background-color: $dark-blue
+    overflow: hidden
+    
+
+.cursor-circle
+    position: absolute
+    display: flex;
+    justify-content: center
+    align-items: center
+    border-radius: 50% 50%
+    border: 2px solid white
+    top: 0
+    left: 0
+    width: 30px
+    height: 30px
+    transition: width .3s, height .3s
+    transform: translate(-50%, -50%)
+    font-size: 1.8rem
+    &--active
+        width: 120px
+        height: 120px  
+
+
+//======================= NAVIGATION =======================
+.burger-btn
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 20px
+    right: 20px
+    width: 80px
+    height: 80px
+    background: none
+    border: 1px solid transparent
+    cursor: pointer
+    &__bars
+        width: 25px
+        height: 2px
+        margin: 2px 0 
+        background-color: $light-white
+
+.nav
+    &--active
+        left: 0
+
+    &--horizontal
+        position: fixed
+        display: flex
+        justify-content: flex-end
+        align-items: flex-end
+        padding-right: 70px
+        height: 50px
+        width: 100vw
+
+    &--vertical
+        left: -100vw
+        position: fixed
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        height: 100vh
+        width: 100vw
+        background-color: $transparent-dark-blue
+        z-index: 200
+
+    &__item
+        &--vertical
+            display: block
+            position: relative
+            color: $white
+            font-size: 1.9rem
+            text-decoration: none
+            letter-spacing: -1px
+            font-size: 3rem
+            margin: 10px 0
+            
+        &--horizontal
+            top: -200px
+            position: relative
+            margin-left: 40px
+            color: white
+            font-size: 1.9rem
+            text-decoration: none
+            letter-spacing: -1px  
+//======================= MAIN =======================
+///////////////////// TITLE PAGE /////////////////////
+
+.title-page
+    height: 100vh
+    width: 100vw
+    background-color: $dark-blue
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 200
+
+    &__hero-text
+        color: $white
+
+    &__first-line
+        font-size: 1.7rem
+
+    &__second-line
+        font-size: 3.5rem
+        line-height: 3rem
+
+    &__third-line
+        text-align: right
+        font-size: 1.5rem
+
+.bubbles
+    position: absolute
+    border-radius: 50% 50%
+    background-color: $transparent-white
+
+    &__one
+        top: 50px
+        width: 100px
+        height: 100px
+
+    &__two
+        top: 200px
+        width: 80px
+        height: 80px
+
+    &__three
+        top: 300px
+        width: 50px
+        height: 50px
+        
+///////////////////// ABOUT ME PAGE /////////////////////
+.about-me
+    height: 100vh
+    width: 100vw
+    background-color: green
+
+@media screen and ( min-width: 375px )
+    //======================= MAIN =======================
+    ///////////////////// TITLE PAGE /////////////////////
+    .title-page
+        &__first-line
+            font-size: 2rem
+
+        &__second-line
+            font-size: 4rem
+            line-height: 4rem
+
+        &__third-line
+            text-align: right
+            font-size: 2rem
+
+    .bubbles
+        &__one
+            top: 50px
+            width: 130px
+            height: 130px
+
+        &__two
+            top: 200px
+            width: 100px
+            height: 100px
+
+        &__three
+            top: 350px
+            width: 80px
+            height: 80px
+
+@media screen and ( min-width: 540px )
+    //======================= MAIN =======================
+    ///////////////////// TITLE PAGE /////////////////////    
+    .title-page
+        &__first-line
+            font-size: 3.2rem
+
+        &__second-line
+            font-size: 6rem
+            line-height: 5rem
+
+        &__third-line
+            text-align: right
+            font-size: 2.7rem
+
+    .bubbles
+        &__one
+            top: 50px
+            width: 170px
+            height: 170px
+
+        &__two
+            top: 250px
+            width: 130px
+            height: 130px
+
+        &__three
+            top: 400px
+            width: 100px
+            height: 100px
+
+
+

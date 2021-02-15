@@ -1,0 +1,58 @@
+.nav--horizontal {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-right: 70px;
+  height: 50px;
+  width: 100vw;
+}
+
+.nav__item--horizontal {
+  top: -200px;
+  position: relative;
+  margin-left: 40px;
+  color: white;
+  font-size: 1.9rem;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+.title-page__first-line {
+  font-size: 7rem;
+}
+
+.title-page__second-line {
+  font-size: 12rem;
+  line-height: 10rem;
+}
+
+.title-page__third-line {
+  text-align: right;
+  font-size: 5.5rem;
+}
+
+.bubbles__one {
+  top: 50px;
+  width: 400px;
+  height: 400px;
+}
+
+.bubbles__two {
+  top: 400px;
+  width: 300px;
+  height: 300px;
+}
+
+.bubbles__three {
+  top: 600px;
+  width: 200px;
+  height: 200px;
+}
+/*# sourceMappingURL=large.css.map */
