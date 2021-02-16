@@ -38,6 +38,7 @@ body
     transform: translate(-50%, -50%)
     transition: width .3s, height .3s
     z-index: 2
+
     &--active-nav
         width: 120px
         height: 120px
@@ -72,7 +73,7 @@ body
 
     &__bars
         margin: 2px 0 
-        width: 25px
+        width: 30px
         height: 2px
         background-color: $light-white
         transition: transform .8s
@@ -111,7 +112,7 @@ body
         height: 100vh
         width: 100vw
         z-index: 3
-
+        
         &__background
             position: fixed
             height: 100vh
@@ -132,7 +133,7 @@ body
             font-size: 3rem
             text-decoration: none
             letter-spacing: -1px
-            transform: translateX(-1000px)
+            transform: translateX(-3000px)
             transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1)
 
             &:hover::after
@@ -152,20 +153,19 @@ body
 
             &--active
                 transform: translateX(0)
+                &:nth-child(1)
+                    transition-delay: .1s
                 &:nth-child(2)
                     transition-delay: .3s
                 &:nth-child(3)
-                    transition-delay: .6s
+                    transition-delay: .5s
                 &:nth-child(4)
-                    transition-delay: .9s
+                    transition-delay: .7s
                     
-
-
 
 
 //======================= MAIN =======================
 ///////////////////// TITLE PAGE /////////////////////
-
 .title-page
     display: flex
     justify-content: center
@@ -194,6 +194,7 @@ body
     border-radius: 50% 50%
     background-color: $transparent-white
     z-index: 0
+    // transform: translate(-50%, -50%)
 
     &__one
         top: 50px

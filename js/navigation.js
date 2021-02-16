@@ -1,10 +1,6 @@
 'use strict'
 class Navigation {
-    constructor(burgerBtn, navHorizontalItems, navVerticalItems, navVertical) {
-        this.burgerBtn = burgerBtn;
-        this.navHorizontalItems = navHorizontalItems;
-        this.navVerticalItems = navVerticalItems;
-        this.navVertical = navVertical;
+    constructor() {
     }
 
     showHorizontalMenu() {
@@ -52,7 +48,7 @@ class Navigation {
     }
 }
 
-const navigation = new Navigation(burgerBtn, navHorizontalItems, navVerticalItems, navVerticalItems);
+const navigation = new Navigation();
 navigation.setRightMenuType();
 window.addEventListener('resize', navigation.setRightMenuType);
 window.addEventListener('scroll', navigation.setRightMenuType);

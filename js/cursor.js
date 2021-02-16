@@ -23,7 +23,7 @@ function cursorOnNavigation() {
     burgerBtn.addEventListener('mouseover', function () {
         circleCursor.classList.add('cursor-circle--active-burgerbtn');
     });
-    
+
     burgerBtn.addEventListener('mouseout', function () {
         circleCursor.classList.remove('cursor-circle--active-burgerbtn');
     });
