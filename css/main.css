@@ -47,7 +47,13 @@ body {
   z-index: 2;
 }
 
-.cursor-circle--active {
+.cursor-circle--active-nav {
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff;
+}
+
+.cursor-circle--active-burgerbtn {
   width: 60px;
   height: 60px;
 }
@@ -84,7 +90,7 @@ body {
   outline: none;
 }
 
-.burger-btn--active {
+.burger-btn--show {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -94,6 +100,20 @@ body {
   width: 25px;
   height: 2px;
   background-color: #e3e3e3;
+  -webkit-transition: -webkit-transform .8s;
+  transition: -webkit-transform .8s;
+  transition: transform .8s;
+  transition: transform .8s, -webkit-transform .8s;
+}
+
+.burger-btn__bars--active:nth-child(1) {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+.burger-btn__bars--active:nth-child(2) {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .nav__horizontal {

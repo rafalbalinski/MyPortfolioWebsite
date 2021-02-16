@@ -38,9 +38,14 @@ body
     transform: translate(-50%, -50%)
     transition: width .3s, height .3s
     z-index: 2
-    &--active
+    &--active-nav
+        width: 120px
+        height: 120px
+        background-color: $white
+
+    &--active-burgerbtn
         width: 60px
-        height: 60px  
+        height: 60px
 
 
 //======================= NAVIGATION =======================
@@ -62,7 +67,7 @@ body
     z-index: 4
     outline: none
 
-    &--active
+    &--show
         transform: translateX(0)
 
     &__bars
@@ -70,6 +75,13 @@ body
         width: 25px
         height: 2px
         background-color: $light-white
+        transition: transform .8s
+        &--active
+            &:nth-child(1)
+                transform: translateY(3px) 
+            &:nth-child(2)
+                transform: translateY(-3px) 
+            
 
 .nav
     &__horizontal

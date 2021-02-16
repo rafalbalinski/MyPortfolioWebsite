@@ -9,25 +9,23 @@ function cursorPosition(event) {
 function cursorOnNavigation() {
     navHorizontalItems.forEach(item => {
         item.addEventListener('mouseover', function () {
-            circleCursor.classList.add('cursor-circle--active');
-            circleCursor.style['background-color'] = '#ffffff';
+            circleCursor.classList.add('cursor-circle--active-nav');
             circleCursor.innerText = item.innerHTML;
             item.style.color = '#ffffff00';
         })
         item.addEventListener('mouseout', function () {
-            circleCursor.classList.remove('cursor-circle--active');
-            circleCursor.style.removeProperty('background-color');
+            circleCursor.classList.remove('cursor-circle--active-nav');
             circleCursor.innerText = '';
             item.style.color = '#ffffff';
         })
     })
 
     burgerBtn.addEventListener('mouseover', function () {
-        circleCursor.classList.add('cursor-circle--active');
+        circleCursor.classList.add('cursor-circle--active-burgerbtn');
     });
     
     burgerBtn.addEventListener('mouseout', function () {
-        circleCursor.classList.remove('cursor-circle--active');
+        circleCursor.classList.remove('cursor-circle--active-burgerbtn');
     });
 }
 
