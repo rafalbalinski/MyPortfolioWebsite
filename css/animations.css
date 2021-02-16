@@ -1,17 +1,17 @@
 @-webkit-keyframes slideInDown {
-  0% {
+  from {
     top: -200px;
   }
-  100% {
+  to {
     top: 0px;
   }
 }
 
 @keyframes slideInDown {
-  0% {
+  from {
     top: -200px;
   }
-  100% {
+  to {
     top: 0px;
   }
 }

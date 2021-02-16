@@ -44,17 +44,18 @@ body {
           transform: translate(-50%, -50%);
   -webkit-transition: width .3s, height .3s;
   transition: width .3s, height .3s;
+  z-index: 2;
 }
 
 .cursor-circle--active {
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
 }
 
 .burger-btn {
   position: fixed;
-  top: 5px;
-  right: 20px;
+  top: 0px;
+  right: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,7 +80,7 @@ body {
   transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1), -webkit-transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   cursor: none;
-  z-index: 3;
+  z-index: 4;
   outline: none;
 }
 
@@ -109,6 +110,7 @@ body {
   padding-right: 70px;
   height: 50px;
   width: 100vw;
+  z-index: 3;
 }
 
 .nav__horizontal__item {
@@ -138,17 +140,24 @@ body {
           align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: #020b15ef;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-  transition: -webkit-transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-  transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-  transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1), -webkit-transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-  z-index: 2;
+  z-index: 3;
 }
 
-.nav__vertical--active {
+.nav__vertical__background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #020b15;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: -webkit-transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1), -webkit-transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  z-index: 1;
+}
+
+.nav__vertical__background--active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -161,6 +170,54 @@ body {
   font-size: 3rem;
   text-decoration: none;
   letter-spacing: -1px;
+  -webkit-transform: translateX(-1000px);
+          transform: translateX(-1000px);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: -webkit-transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1), -webkit-transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.nav__vertical__item:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.nav__vertical__item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 5px;
+  background-color: #ffffff;
+  z-index: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.nav__vertical__item--active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.nav__vertical__item--active:nth-child(2) {
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.nav__vertical__item--active:nth-child(3) {
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
+.nav__vertical__item--active:nth-child(4) {
+  -webkit-transition-delay: .9s;
+          transition-delay: .9s;
 }
 
 .title-page {
@@ -200,7 +257,8 @@ body {
 .bubbles {
   position: absolute;
   border-radius: 50% 50%;
-  background-color: #ffffff1a;
+  background-color: #ffffff07;
+  z-index: 0;
 }
 
 .bubbles__one {
@@ -228,6 +286,13 @@ body {
 }
 
 @media screen and (min-width: 375px) {
+  .burger-btn {
+    top: 10px;
+    right: 20px;
+  }
+  .nav__vertical__item {
+    font-size: 4rem;
+  }
   .title-page__first-line {
     font-size: 2rem;
   }
@@ -257,6 +322,9 @@ body {
 }
 
 @media screen and (min-width: 540px) {
+  .nav__vertical__item {
+    font-size: 5rem;
+  }
   .title-page__first-line {
     font-size: 3.2rem;
   }

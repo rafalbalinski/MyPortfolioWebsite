@@ -1,4 +1,5 @@
 'use strict'
+
 function cursorPosition(event) {
     circleCursor.style.left = event.pageX + 'px';
     circleCursor.style.top = event.pageY + 'px';
@@ -21,11 +22,11 @@ function cursorOnNavigation() {
         })
     })
 
-    burgerBtn.addEventListener('mouseover', function (){
+    burgerBtn.addEventListener('mouseover', function () {
         circleCursor.classList.add('cursor-circle--active');
     });
-
-    burgerBtn.addEventListener('mouseout', function (){
+    
+    burgerBtn.addEventListener('mouseout', function () {
         circleCursor.classList.remove('cursor-circle--active');
     });
 }

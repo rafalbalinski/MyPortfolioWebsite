@@ -1,3 +1,8 @@
+.cursor-circle--active {
+  width: 120px;
+  height: 120px;
+}
+
 .title-page__first-line {
   font-size: 7rem;
 }
