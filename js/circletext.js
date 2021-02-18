@@ -15,6 +15,8 @@ circleTextButtons.forEach( (item, index) => buttonsText[index] = item.innerText)
 buttonsText.forEach( (item, index) => { buttonsTextSplit[index] = item.split('') });
 circleTextButtons.forEach( item => item.innerText = "");
 
+addSpacesBetwenLetters(3);
+
 let angle = -90;
 const deltaAngle = 360/(charnumbers(buttonsTextSplit));
 let letterNumber = 0;
@@ -34,29 +36,17 @@ function createRadianButton(circleTextButtons, button){
     })
 }
 
-createRadianButton(buttonsTextSplit[0], circleTextButtons[0]);
-createRadianButton(buttonsTextSplit[1], circleTextButtons[1]);
-createRadianButton(buttonsTextSplit[2], circleTextButtons[2]);
-createRadianButton(buttonsTextSplit[3], circleTextButtons[3]);
+for(let i = 0; i < buttonsText.length; i++)
+    createRadianButton(buttonsTextSplit[i], circleTextButtons[i]);
 
-
-// let i =0;
-// while (i <= buttonsTextSplit[0].length) {
-//     buttonsTextSplit[0].splice(i, 0, '\xa0');
-//     i += 2;
-// }
-// i =0;
-// while (i <= buttonsTextSplit[1].length) {
-//     buttonsTextSplit[1].splice(i, 0, '\xa0');
-//     i += 2;
-// }
-// i =0;
-// while (i <= buttonsTextSplit[2].length) {
-//     buttonsTextSplit[2].splice(i, 0, '\xa0');
-//     i += 2;
-// }
-// i =0;
-// while (i <= buttonsTextSplit[3].length) {
-//     buttonsTextSplit[3].splice(i, 0, '\xa0');
-//     i += 2;
-// }
+function addSpacesBetwenLetters(quantity){
+    let index=0;
+    for(let interval = 0; interval < quantity; interval++)
+        for(let i = 0; i < buttonsText.length; i++){
+            while (index <= buttonsTextSplit[i].length) {
+                buttonsTextSplit[i].splice(index, 0, '\xa0');
+                index += 2;
+            }
+            index = 0;
+        }
+}

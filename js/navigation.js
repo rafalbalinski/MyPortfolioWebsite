@@ -20,7 +20,7 @@ class Navigation {
     showVerticalMenu() {
         burgerBtnBars[0].classList.toggle('burger-btn__bars--active');
         burgerBtnBars[1].classList.toggle('burger-btn__bars--active');
-        navBackground.classList.toggle('nav__vertical__background--active');
+        navVertical.classList.toggle('nav__vertical--active');
         navVerticalItems.forEach(item => {
             item.classList.toggle('nav__vertical__item--active');
         })
@@ -29,7 +29,7 @@ class Navigation {
             item.addEventListener('click', () => {
                 burgerBtnBars[0].classList.remove('burger-btn__bars--active');
                 burgerBtnBars[1].classList.remove('burger-btn__bars--active');
-                navBackground.classList.remove('nav__vertical__background--active');
+                navVertical.classList.remove('nav__vertical--active');
                 navVerticalItems.forEach(item => {
                     item.classList.remove('nav__vertical__item--active');
                 })
