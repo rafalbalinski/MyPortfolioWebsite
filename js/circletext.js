@@ -15,6 +15,9 @@ circleTextButtons.forEach( (item, index) => buttonsText[index] = item.innerText)
 buttonsText.forEach( (item, index) => { buttonsTextSplit[index] = item.split('') });
 circleTextButtons.forEach( item => item.innerText = "");
 
+circleBorder.style.width = aboutMeSection.offsetHeight - 200 + "px";
+circleBorder.style.height = aboutMeSection.offsetHeight - 200 + "px";
+
 addSpacesBetwenLetters(3);
 
 const fontSize = parseInt(window.getComputedStyle(circleTextButtons[0], null).getPropertyValue('font-size'),10);
