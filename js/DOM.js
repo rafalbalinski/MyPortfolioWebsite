@@ -11,3 +11,7 @@ const burgerBtnBars = burgerBtn.querySelectorAll('.burger-btn__bars');          
 
 const bubbles = document.querySelectorAll('.bubbles');
 const titlePage = document.querySelector('.title-page');
+
+const circleBorder = document.querySelector('.about-me__circle');
+const circleTextButtons = document.querySelectorAll('.about-me__circle__text');
+

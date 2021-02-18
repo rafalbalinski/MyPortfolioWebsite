@@ -17,7 +17,7 @@ html
 
 body 
     position: relative
-    font-family: 'Manrope', sans-serif
+    font-family: 'Roboto', sans-serif
     font-size: 1.6rem
     background-color: $dark-blue
     overflow: hidden
@@ -35,6 +35,7 @@ body
     border: 2px solid white
     border-radius: 50% 50%
     font-size: 1.8rem
+    font-weight: bold
     transform: translate(-50%, -50%)
     transition: width .3s, height .3s
     z-index: 2
@@ -94,13 +95,14 @@ body
         height: 50px
         width: 100vw
         z-index: 3
+        font-weight: bold
+
         &__item
             position: relative
             top: -200px
             margin-left: 40px
             color: white
             font-size: 1.9rem
-            letter-spacing: -1px
             text-decoration: none
 
     &__vertical
@@ -140,10 +142,10 @@ body
                 transform: scaleX(1)
                 
             &::after
+                content: ''
                 position: absolute
                 bottom: 0
                 left: 0
-                content: ''
                 width: 100%
                 height: 5px
                 background-color: $white
@@ -194,7 +196,6 @@ body
     border-radius: 50% 50%
     background-color: $transparent-white
     z-index: 0
-    // transform: translate(-50%, -50%)
 
     &__one
         top: 50px
@@ -215,9 +216,44 @@ body
 .about-me
     height: 100vh
     width: 100vw
-    background-color: grey
+    background-color: $semi-dark-blue
 
+    &__wrapper
+        height: 100%
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
 
+    &__circle
+        position: relative
+        width: 700px
+        height: 700px
+        color: $white
+        border-radius: 50% 50% 
+        border: 2px solid $white
+        font-size: 2rem
+        font-weight: bold
+        z-index: 2
+        animation: rotatnion 60s linear infinite
+        &__text
+            position: relative
+            &:hover
+                color: red
+            span
+                position: absolute
+
+@keyframes rotatnion
+    0%  
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+///////////////////// PORTFOLIO PAGE /////////////////////
+.portfolio
+    height: 100vh
+    width: 100vw
+    background-color: $dark-blue
 
 
 @media screen and ( min-width: 375px )
