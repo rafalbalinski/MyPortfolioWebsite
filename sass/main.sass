@@ -209,7 +209,7 @@ body
         
 ///////////////////// ABOUT ME PAGE /////////////////////
 .about-me
-    height: 100vh
+    height: auto
     width: 100vw
     background-color: $semi-dark-blue
     z-index: 8
@@ -217,27 +217,18 @@ body
     &__wrapper
         height: 100%
         width: 100%
+        padding: 100px 0
         display: flex
         justify-content: center
         align-items: center
 
-    &__circle
-        position: relative
-        width: 700px
-        height: 700px
+    &__description
         color: $white
-        border-radius: 50% 50% 
-        border: 2px solid $white
-        font-size: 2rem
-        font-weight: bold
-        animation: rotatnion 60s linear infinite
-        &__text
-            position: relative
-            &:hover
-                color: red
-            span
-                position: absolute
+        position: absolute
 
+    &__circle
+        display: none
+        
 @keyframes rotatnion
     0%  
         transform: rotate(0deg)

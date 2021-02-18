@@ -17,6 +17,7 @@ circleTextButtons.forEach( item => item.innerText = "");
 
 addSpacesBetwenLetters(3);
 
+const fontSize = parseInt(window.getComputedStyle(circleTextButtons[0], null).getPropertyValue('font-size'),10);
 let angle = -90;
 const deltaAngle = 360/(charnumbers(buttonsTextSplit));
 let letterNumber = 0;
@@ -27,7 +28,7 @@ function createRadianButton(circleTextButtons, button){
         charelement.innerText = char;
         const xpos = (circleBorder.offsetHeight/2+30) * Math.cos(angleToRadian(angle));
         const ypos = (circleBorder.offsetHeight/2+30) * Math.sin(angleToRadian(angle));
-        const transform = `translate(${xpos+circleBorder.offsetHeight/2-12}px, ${ypos+circleBorder.offsetHeight/2-12}px)`;
+        const transform = `translate(${xpos+circleBorder.offsetHeight/2-fontSize/2}px, ${ypos+circleBorder.offsetHeight/2-fontSize/2}px)`;
         const rotate = `rotate(${letterNumber * deltaAngle}deg)`;
         charelement.style.transform = `${transform} ${rotate}`;
         angle += deltaAngle;
@@ -50,3 +51,20 @@ function addSpacesBetwenLetters(quantity){
             index = 0;
         }
 }
+
+colorToSelectRoundText = () => {
+    circleTextButtons.forEach( (selected, selectedIndex) => { 
+        selected.addEventListener('click', function(){
+            selected.classList.add('about-me__circle__text--active');
+            aboutMeDescriptions[selectedIndex].style.opacity = "1";
+            circleTextButtons.forEach( (unselected, unselectedIndex) => { 
+                if(unselected !=selected){
+                    unselected.classList.remove('about-me__circle__text--active');
+                    aboutMeDescriptions[unselectedIndex].style.opacity = "0";
+                }
+            });
+        });
+    });
+}
+
+aboutMeSection.addEventListener('mousemove', colorToSelectRoundText );

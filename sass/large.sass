@@ -1,3 +1,5 @@
+@import './colors'
+
 //======================= MAIN =======================
 ///////////////////// TITLE PAGE /////////////////////
 .title-page
@@ -27,4 +29,40 @@
         top: 600px
         width: 200px
         height: 200px
-    
+
+
+///////////////////// ABOUT ME PAGE /////////////////////
+.about-me
+    &__wrapper
+        height: 100vh
+        width: 100vw
+        padding: 0
+
+    &__circle
+        display: block
+        position: relative
+        width: 700px
+        height: 700px
+        color: $white
+        border-radius: 50% 50% 
+        border: 2px solid $white
+        font-size: 2rem
+        font-weight: bold
+        animation: rotatnion 60s linear infinite
+        &__text
+            transition: color .4s
+            position: relative
+
+            &--active
+                color: $dark-red
+
+            &:hover
+                color: $dark-red
+
+            span
+                position: absolute
+
+    &__description
+        opacity: 0
+        transition: opacity .4s
+
