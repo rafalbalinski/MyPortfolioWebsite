@@ -33,12 +33,16 @@
 
 ///////////////////// ABOUT ME PAGE /////////////////////
 .about-me
+    height: auto
     &__wrapper
         height: 100vh
         width: 100vw
+        margin: 0
         min-height: 900px
+        justify-content: center
+        align-items: center
         padding: 80px 0
-
+        
     &__circle
         display: block
         position: relative
@@ -64,6 +68,37 @@
                 position: absolute
 
     &__description
+        position: absolute
+        width: 600px
+        height: 400px
         opacity: 0
         transition: opacity .4s
+
+        &__education
+            .segment
+                height: 100px
+                font-size: 1.7rem
+
+                &__title
+                    height: 100px
+                    font-size: 3rem
+
+                &__main-description
+                    right: 0
+                    width: 450px
+                    padding-left: 20px 
+                    &::before
+                        left: -5px
+                        width: 1px
+
+                &__year
+                    width: 150px
+                    padding-right: 20px 
+                    &::before
+                        right: 0
+                        width: 10px
+                        height: 10px
+          
+
+
 

@@ -18,11 +18,7 @@ circleTextButtons.forEach( item => item.innerText = "");
 addSpacesBetwenLetters(3);
 
 let fontSize = parseInt(window.getComputedStyle(circleTextButtons[0], null).getPropertyValue('font-size'),10);
-if(document.offsetHeight-200 > 700 && document.offsetHeight-200 < 2000){
-    circleBorder.style.height = document.offsetHeight-200;
-    circleBorder.style.width = document.offsetHeight-200;
-}
-let circleHeight = circleBorder.offsetHeight/2;
+let circleHeight = 350;
 let angle = -90;
 const deltaAngle = 360/(charnumbers(buttonsTextSplit));
 let letterNumber = 0;

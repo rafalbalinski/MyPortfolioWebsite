@@ -30,10 +30,21 @@
   height: 200px;
 }
 
+.about-me {
+  height: auto;
+}
+
 .about-me__wrapper {
   height: 100vh;
   width: 100vw;
+  margin: 0;
   min-height: 900px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 80px 0;
 }
 
@@ -70,8 +81,43 @@
 }
 
 .about-me__description {
+  position: absolute;
+  width: 600px;
+  height: 400px;
   opacity: 0;
   -webkit-transition: opacity .4s;
   transition: opacity .4s;
+}
+
+.about-me__description__education .segment {
+  height: 100px;
+  font-size: 1.7rem;
+}
+
+.about-me__description__education .segment__title {
+  height: 100px;
+  font-size: 3rem;
+}
+
+.about-me__description__education .segment__main-description {
+  right: 0;
+  width: 450px;
+  padding-left: 20px;
+}
+
+.about-me__description__education .segment__main-description::before {
+  left: -5px;
+  width: 1px;
+}
+
+.about-me__description__education .segment__year {
+  width: 150px;
+  padding-right: 20px;
+}
+
+.about-me__description__education .segment__year::before {
+  right: 0;
+  width: 10px;
+  height: 10px;
 }
 /*# sourceMappingURL=large.css.map */

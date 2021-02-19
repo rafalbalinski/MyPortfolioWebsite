@@ -209,28 +209,81 @@ body
         
 ///////////////////// ABOUT ME PAGE /////////////////////
 .about-me
-    min-height: 600px
-    height: auto
+    height: 500px
     width: 100vw
     background-color: $semi-dark-blue
     z-index: 8
     
+    &__circle
+        display: none
+
     &__wrapper
-        min-height: 600px
         height: 100%
-        width: 100%
-        padding: 100px 0
+        width: 320px
+        margin: 0 auto
+        padding: 10px 0px
         display: flex
-        justify-content: center
-        align-items: center
+        flex-direction: column
+
 
     &__description
         color: $white
-        position: absolute
+        position: relative
+        width: 100%
 
-    &__circle
-        display: none
-        
+        &__education
+            .segment
+                width: 100%
+                height: 80px
+                text-wrap: wrap
+                position: relative
+                display: block
+                font-size: 1.2rem
+
+                &__title
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    height: 80px
+                    text-align: center
+                    font-size: 2rem
+                    font-weight: bold
+
+                &__main-description
+                    right: 0
+                    position: absolute
+                    width: 230px
+                    text-align: left
+                    padding-left: 5px 
+                    font-weight: bold
+                    &::before
+                        content: ''
+                        position: absolute
+                        left: -7px
+                        width: 1px
+                        height: 100%
+                        background-color: $white
+
+                &__secondary-description
+                    font-weight: normal
+
+                &__year
+                    left: 0
+                    position: absolute
+                    width: 80px
+                    padding-right: 5px 
+                    text-align: right
+                    &::before
+                        content: ''
+                        position: absolute
+                        right: -7px
+                        width: 7px
+                        height: 7px
+                        border-radius: 50% 50%
+                        background-color: $white
+
+
+
 @keyframes rotatnion
     0%  
         transform: rotate(0deg)
@@ -255,7 +308,6 @@ body
         &__vertical
             &__item
                 font-size: 4rem
-
 
     //======================= MAIN =======================
     ///////////////////// TITLE PAGE /////////////////////
@@ -287,6 +339,7 @@ body
             width: 80px
             height: 80px
 
+ 
 @media screen and ( min-width: 540px )
     //======================= NAVIGATION =======================    
     .nav
@@ -324,5 +377,34 @@ body
             width: 100px
             height: 100px
 
+    ///////////////////// ABOUT ME PAGE /////////////////////
+    .about-me
+        &__wrapper
+            width: 530px
 
+        &__description__education
+            .segment
+                width: 100%
+                height: 80px
+                font-size: 1.5rem
+
+                &__title
+                    height: 80px
+                    font-size: 2.2rem
+
+                &__main-description
+                    right: 0
+                    width: 400px
+                    padding-left: 5px 
+                    &::before
+                        left: -17px
+                        width: 1px
+
+                &__year
+                    width: 100px
+                    padding-right: 5px 
+                    &::before
+                        right: -17px
+                        width: 8px
+                        height: 8px  
 
