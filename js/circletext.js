@@ -15,23 +15,26 @@ circleTextButtons.forEach( (item, index) => buttonsText[index] = item.innerText)
 buttonsText.forEach( (item, index) => { buttonsTextSplit[index] = item.split('') });
 circleTextButtons.forEach( item => item.innerText = "");
 
-circleBorder.style.width = aboutMeSection.offsetHeight - 200 + "px";
-circleBorder.style.height = aboutMeSection.offsetHeight - 200 + "px";
-
 addSpacesBetwenLetters(3);
 
-const fontSize = parseInt(window.getComputedStyle(circleTextButtons[0], null).getPropertyValue('font-size'),10);
+let fontSize = parseInt(window.getComputedStyle(circleTextButtons[0], null).getPropertyValue('font-size'),10);
+if(document.offsetHeight-200 > 700 && document.offsetHeight-200 < 2000){
+    circleBorder.style.height = document.offsetHeight-200;
+    circleBorder.style.width = document.offsetHeight-200;
+}
+let circleHeight = circleBorder.offsetHeight/2;
 let angle = -90;
 const deltaAngle = 360/(charnumbers(buttonsTextSplit));
 let letterNumber = 0;
 
-function createRadianButton(circleTextButtons, button){
+function createRadialText(circleTextButtons, button){
     circleTextButtons.forEach((char) => {
         const charelement = document.createElement('span');
+        charelement.classList.add('about-me__circle__text__letter');
         charelement.innerText = char;
-        const xpos = (circleBorder.offsetHeight/2+30) * Math.cos(angleToRadian(angle));
-        const ypos = (circleBorder.offsetHeight/2+30) * Math.sin(angleToRadian(angle));
-        const transform = `translate(${xpos+circleBorder.offsetHeight/2-fontSize/2}px, ${ypos+circleBorder.offsetHeight/2-fontSize/2}px)`;
+        const xpos = (circleHeight + 30) * Math.cos(angleToRadian(angle));
+        const ypos = (circleHeight + 30) * Math.sin(angleToRadian(angle));
+        const transform = `translate(${xpos + circleHeight - fontSize / 2}px, ${ypos + circleHeight - fontSize / 2}px)`;
         const rotate = `rotate(${letterNumber * deltaAngle}deg)`;
         charelement.style.transform = `${transform} ${rotate}`;
         angle += deltaAngle;
@@ -41,7 +44,7 @@ function createRadianButton(circleTextButtons, button){
 }
 
 for(let i = 0; i < buttonsText.length; i++)
-    createRadianButton(buttonsTextSplit[i], circleTextButtons[i]);
+    createRadialText(buttonsTextSplit[i], circleTextButtons[i]);
 
 function addSpacesBetwenLetters(quantity){
     let index=0;
@@ -70,4 +73,4 @@ colorToSelectRoundText = () => {
     });
 }
 
-aboutMeSection.addEventListener('mousemove', colorToSelectRoundText );
+colorToSelectRoundText();

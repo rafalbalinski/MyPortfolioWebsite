@@ -6,28 +6,31 @@ function cursorPosition(event) {
 
 };
 
+
 function cursorOnNavigation() {
     navHorizontalItems.forEach(item => {
-        item.addEventListener('mouseover', function () {
+        item.addEventListener('mouseenter', function () {
+            console.log('jestem nad');
             circleCursor.classList.add('cursor-circle--active-nav');
             circleCursor.innerText = item.innerHTML;
             item.style.color = '#ffffff00';
         })
-        item.addEventListener('mouseout', function () {
+        item.addEventListener('mouseleave', function () {
+            console.log('nie jestem nad');
             circleCursor.classList.remove('cursor-circle--active-nav');
             circleCursor.innerText = '';
             item.style.color = '#ffffff';
         })
     })
 
-    burgerBtn.addEventListener('mouseover', function () {
+    burgerBtn.addEventListener('mouseenter', function () {
         circleCursor.classList.add('cursor-circle--active-burgerbtn');
     });
 
-    burgerBtn.addEventListener('mouseout', function () {
+    burgerBtn.addEventListener('mouseleave', function () {
         circleCursor.classList.remove('cursor-circle--active-burgerbtn');
     });
 }
 
 document.addEventListener('mousemove', cursorPosition);
-document.addEventListener('mousemove', cursorOnNavigation);
+cursorOnNavigation();

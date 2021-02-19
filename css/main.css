@@ -300,6 +300,7 @@ body {
 }
 
 .about-me {
+  min-height: 600px;
   height: auto;
   width: 100vw;
   background-color: #09121b;
@@ -307,6 +308,7 @@ body {
 }
 
 .about-me__wrapper {
+  min-height: 600px;
   height: 100%;
   width: 100%;
   padding: 100px 0;

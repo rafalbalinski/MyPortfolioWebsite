@@ -52,5 +52,4 @@ const navigation = new Navigation();
 navigation.setRightMenuType();
 window.addEventListener('resize', navigation.setRightMenuType);
 window.addEventListener('scroll', navigation.setRightMenuType);
-
 burgerBtn.addEventListener('click', navigation.showVerticalMenu);
