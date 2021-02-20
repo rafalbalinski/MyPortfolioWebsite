@@ -58,11 +58,13 @@ colorToSelectRoundText = () => {
     circleTextButtons.forEach( (selected, selectedIndex) => { 
         selected.addEventListener('click', function(){
             selected.classList.add('about-me__circle__text--active');
-            aboutMeDescriptions[selectedIndex].style.opacity = "1";
+            aboutMeDescriptions[selectedIndex].classList.add('about-me__description--active');
+            // aboutMeDescriptions[selectedIndex].style.opacity = "1";
             circleTextButtons.forEach( (unselected, unselectedIndex) => { 
                 if(unselected !=selected){
                     unselected.classList.remove('about-me__circle__text--active');
-                    aboutMeDescriptions[unselectedIndex].style.opacity = "0";
+                    aboutMeDescriptions[unselectedIndex].classList.remove('about-me__description--active');
+                    // aboutMeDescriptions[unselectedIndex].style.opacity = "0";
                 }
             });
         });
@@ -70,3 +72,4 @@ colorToSelectRoundText = () => {
 }
 
 colorToSelectRoundText();
+

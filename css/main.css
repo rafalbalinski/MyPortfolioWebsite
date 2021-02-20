@@ -300,9 +300,10 @@ body {
 }
 
 .about-me {
-  height: 500px;
+  height: auto;
   width: 100vw;
   background-color: #09121b;
+  color: #ffffff;
   z-index: 8;
 }
 
@@ -311,10 +312,10 @@ body {
 }
 
 .about-me__wrapper {
+  position: relative;
   height: 100%;
-  width: 320px;
-  margin: 0 auto;
-  padding: 10px 0px;
+  width: 100%;
+  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,24 +323,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-me__title {
+  text-transform: uppercase;
+  padding: 20px 0 10px 0;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .about-me__description {
-  color: #ffffff;
   position: relative;
+  padding: 0 20px 40px 20px;
+  font-size: 1.4rem;
   width: 100%;
+  text-align: center;
 }
 
-.about-me__description__education .segment {
-  width: 100%;
-  height: 80px;
-  text-wrap: wrap;
-  position: relative;
-  display: block;
-  font-size: 1.2rem;
-}
-
-.about-me__description__education .segment__title {
+.about-me__description .skills {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,75 +353,51 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80px;
-  text-align: center;
-  font-size: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 3rem;
+}
+
+.about-me__description .skills p {
+  width: 100px;
+  margin: 20px 0;
   font-weight: bold;
 }
 
-.about-me__description__education .segment__main-description {
-  right: 0;
-  position: absolute;
-  width: 230px;
-  text-align: left;
-  padding-left: 5px;
-  font-weight: bold;
-}
-
-.about-me__description__education .segment__main-description::before {
-  content: '';
-  position: absolute;
-  left: -7px;
-  width: 1px;
-  height: 100%;
-  background-color: #ffffff;
-}
-
-.about-me__description__education .segment__secondary-description {
+.about-me__description .skills span {
+  font-size: 1.5rem;
+  display: block;
   font-weight: normal;
 }
 
-.about-me__description__education .segment__year {
-  left: 0;
-  position: absolute;
-  width: 80px;
-  padding-right: 5px;
+.about-me__description .education {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+.about-me__description .education__main-description {
+  width: 85%;
+  text-align: left;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.about-me__description .education__secondary-description {
+  font-weight: normal;
+}
+
+.about-me__description .education__year {
+  width: 15%;
+  padding-right: 10px;
   text-align: right;
 }
 
-.about-me__description__education .segment__year::before {
-  content: '';
-  position: absolute;
-  right: -7px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50% 50%;
-  background-color: #ffffff;
-}
-
-@-webkit-keyframes rotatnion {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes rotatnion {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-.portfolio {
+.about-me .portfolio {
   height: 100vh;
   width: 100vw;
   background-color: #020b15;
@@ -459,6 +439,31 @@ body {
   }
 }
 
+@media screen and (min-width: 400px) {
+  .about-me__wrapper {
+    padding: 20px 0;
+  }
+  .about-me__title {
+    padding: 20px 0 10px 0;
+    font-size: 2rem;
+  }
+  .about-me__description {
+    padding: 0 20px 30px 20px;
+    font-size: 1.4rem;
+  }
+  .about-me__description .education {
+    font-size: 1.4rem;
+  }
+  .about-me__description .education__main-description {
+    width: 80%;
+    padding-left: 10px;
+  }
+  .about-me__description .education__year {
+    width: 20%;
+    padding-right: 10px;
+  }
+}
+
 @media screen and (min-width: 540px) {
   .nav__vertical__item {
     font-size: 5rem;
@@ -490,34 +495,35 @@ body {
     height: 100px;
   }
   .about-me__wrapper {
-    width: 530px;
+    padding: 20px 20px;
   }
-  .about-me__description__education .segment {
-    width: 100%;
-    height: 80px;
-    font-size: 1.5rem;
+  .about-me__description .education {
+    margin: 20px 0;
   }
-  .about-me__description__education .segment__title {
-    height: 80px;
-    font-size: 2.2rem;
+  .about-me__description .education__main-description {
+    position: relative;
+    padding-left: 15px;
   }
-  .about-me__description__education .segment__main-description {
-    right: 0;
-    width: 400px;
-    padding-left: 5px;
-  }
-  .about-me__description__education .segment__main-description::before {
-    left: -17px;
+  .about-me__description .education__main-description::before {
+    content: '';
+    position: absolute;
+    height: 100%;
     width: 1px;
+    left: -2px;
+    background-color: #ffffff;
   }
-  .about-me__description__education .segment__year {
-    width: 100px;
-    padding-right: 5px;
+  .about-me__description .education__year {
+    position: relative;
+    padding-right: 15px;
   }
-  .about-me__description__education .segment__year::before {
-    right: -17px;
-    width: 8px;
+  .about-me__description .education__year::before {
+    content: '';
+    position: absolute;
     height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    right: -2px;
+    background-color: #ffffff;
   }
 }
 /*# sourceMappingURL=main.css.map */

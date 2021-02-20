@@ -33,4 +33,35 @@
   width: 140px;
   height: 140px;
 }
+
+.about-me__wrapper {
+  padding: 20px 50px;
+}
+
+.about-me__title {
+  font-size: 4rem;
+}
+
+.about-me__description {
+  font-size: 1.5rem;
+}
+
+.about-me__description .education {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 700px) {
+  .about-me__wrapper {
+    padding: 20px 60px;
+  }
+  .about-me__title {
+    font-size: 4rem;
+  }
+  .about-me__description {
+    font-size: 1.6rem;
+  }
+  .about-me__description .education {
+    font-size: 1.6rem;
+  }
+}
 /*# sourceMappingURL=small.css.map */
