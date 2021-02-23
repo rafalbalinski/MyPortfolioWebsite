@@ -1,4 +1,4 @@
-.nav__vertical__item {
+.nav__vertical-item {
   font-size: 5rem;
 }
 
@@ -16,19 +16,19 @@
   text-align: right;
 }
 
-.bubbles__one {
+.title-page .bubbles__one {
   top: 50px;
   width: 250px;
   height: 250px;
 }
 
-.bubbles__two {
+.title-page .bubbles__two {
   top: 400px;
   width: 180px;
   height: 180px;
 }
 
-.bubbles__three {
+.title-page .bubbles__three {
   top: 600px;
   width: 140px;
   height: 140px;
@@ -38,15 +38,15 @@
   padding: 20px 50px;
 }
 
-.about-me__title {
-  font-size: 4rem;
-}
-
 .about-me__description {
   font-size: 1.5rem;
 }
 
-.about-me__description .education {
+.about-me__description-title {
+  font-size: 4rem;
+}
+
+.about-me__description-education {
   font-size: 1.5rem;
 }
 
@@ -54,13 +54,13 @@
   .about-me__wrapper {
     padding: 20px 60px;
   }
-  .about-me__title {
-    font-size: 4rem;
-  }
   .about-me__description {
     font-size: 1.6rem;
   }
-  .about-me__description .education {
+  .about-me__description-title {
+    font-size: 4rem;
+  }
+  .about-me__description-education {
     font-size: 1.6rem;
   }
 }

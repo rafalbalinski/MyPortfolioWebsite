@@ -12,19 +12,19 @@
   text-align: right;
 }
 
-.bubbles__one {
+.title-page .bubbles__one {
   top: 50px;
   width: 300px;
   height: 300px;
 }
 
-.bubbles__two {
+.title-page .bubbles__two {
   top: 400px;
   width: 230px;
   height: 230px;
 }
 
-.bubbles__three {
+.title-page .bubbles__three {
   top: 650px;
   width: 150px;
   height: 150px;
@@ -34,15 +34,15 @@
   padding: 20px 90px;
 }
 
-.about-me__description .skills p {
+.about-me__description-skills p {
   width: 110px;
 }
 
-.about-me__description .education__main-description {
+.about-me__description-education-main-text {
   width: 80%;
 }
 
-.about-me__description .education__year {
+.about-me__description-education-year {
   width: 20%;
 }
 
@@ -50,19 +50,19 @@
   .about-me__wrapper {
     padding: 20px 100px;
   }
-  .about-me__description .skills p {
+  .about-me__description-skills p {
     width: 120px;
   }
-  .about-me__description .education__main-description {
+  .about-me__description-education-main-text {
     width: 75%;
   }
-  .about-me__description .education__year {
+  .about-me__description-education-year {
     width: 25%;
   }
 }
 
 @media screen and (min-width: 950px) {
-  .about-me__description .skills p {
+  .about-me__description-skills p {
     width: 130px;
   }
 }

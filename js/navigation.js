@@ -29,7 +29,7 @@ class Navigation {
         burgerBtnBars[1].classList.toggle('burger-btn__bars--active');
         navVertical.classList.toggle('nav__vertical--active');
         navVerticalItems.forEach(item => {
-            item.classList.toggle('nav__vertical__item--active');
+            item.classList.toggle('nav__vertical-item--active');
         })
 
         navVerticalItems.forEach(item => {
@@ -38,14 +38,14 @@ class Navigation {
                 burgerBtnBars[1].classList.remove('burger-btn__bars--active');
                 navVertical.classList.remove('nav__vertical--active');
                 navVerticalItems.forEach(item => {
-                    item.classList.remove('nav__vertical__item--active');
+                    item.classList.remove('nav__vertical-item--active');
                 })
             })
         })
     }
 
     setRightMenuType = () => {
-        if (window.innerWidth > 992 && window.scrollY < 50 && !navVerticalItems[0].classList.contains('nav__vertical__item--active')) {
+        if (window.innerWidth > 992 && window.scrollY < 50 && !navVerticalItems[0].classList.contains('nav__vertical-item--active')) {
             this.showHorizontalMenu();
             burgerBtn.classList.remove('burger-btn--show')
         } else {

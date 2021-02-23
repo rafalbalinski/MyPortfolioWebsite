@@ -99,7 +99,7 @@ body
         padding-right: 70px
         font-weight: bold
 
-        &__item
+        &-item
             position: relative
             top: -200px
             margin-left: 40px
@@ -123,7 +123,7 @@ body
         &--active
             transform: translateX(0)
 
-        &__item
+        &-item
             position: relative
             display: block
             transform: translateX(-3000px)
@@ -186,26 +186,26 @@ body
         font-size: 1.5rem
         text-align: right
 
-.bubbles
-    position: absolute
-    z-index: 7
-    border-radius: 50% 50%
-    background-color: $transparent-white
+    .bubbles
+        position: absolute
+        z-index: 7
+        border-radius: 50% 50%
+        background-color: $transparent-white
 
-    &__one
-        top: 50px
-        width: 100px
-        height: 100px
+        &__one
+            top: 50px
+            width: 100px
+            height: 100px
 
-    &__two
-        top: 200px
-        width: 80px
-        height: 80px
+        &__two
+            top: 200px
+            width: 80px
+            height: 80px
 
-    &__three
-        top: 300px
-        width: 50px
-        height: 50px
+        &__three
+            top: 300px
+            width: 50px
+            height: 50px
         
 
 ///////////////////// ABOUT ME PAGE /////////////////////
@@ -228,12 +228,6 @@ body
         height: 100%
         padding: 20px 0
 
-    &__title
-        padding: 20px 0 10px 0
-        font-size: 2rem
-        text-align: center
-        text-transform: uppercase
-
     &__description
         position: relative
         width: 100%
@@ -241,8 +235,14 @@ body
         font-size: 1.4rem
         text-align: center
 
-        .aboutme
-            &__download
+        &-title
+            padding: 20px 0 10px 0
+            font-size: 2rem
+            text-align: center
+            text-transform: uppercase
+
+        &-about
+            &-download
                 position: relative
                 z-index: 8
                 display: inline-block
@@ -279,7 +279,7 @@ body
                 &:hover::after
                     right: 0
 
-        .skills
+        &-skills
             justify-content: center
             align-items: center
             flex-wrap: wrap
@@ -296,23 +296,23 @@ body
                 font-size: 1.5rem
                 font-weight: normal
 
-        .education
+        &-education
             position: relative
             display: flex
             margin: 10px 0
             width: 100%
             font-size: 1.4rem
 
-            &__main-description
+            &-main-text
                 width: 85%
                 padding-left: 10px
                 text-align: left
                 font-weight: bold
 
-            &__secondary-description
+            &-secondary-text
                 font-weight: normal
                 
-            &__year
+            &-year
                 width: 15%
                 padding-right: 10px
                 text-align: right
@@ -320,10 +320,133 @@ body
 
 ///////////////////// PORTFOLIO PAGE /////////////////////
 .portfolio
-    height: 100vh
     width: 100vw
+    height: auto
     background-color: $dark-blue
+    color: white
 
+    &__title
+        padding: 30px 0 40px 0
+        font-size: 2rem
+        font-weight: bold
+        text-align: center
+        text-transform: uppercase
+
+    &__wrapper
+        justify-content: center
+        flex-wrap: wrap
+        display: flex
+        width: 100%
+        height: 100%
+        padding: 0 20px
+
+    &__card
+        overflow: hidden
+        perspective: 1000px
+        margin: 20px 20px
+        width: 200px
+        height: 200px
+
+        &:hover 
+            .portfolio__card-front 
+                opacity: 0
+                transform: rotateY(-180deg)
+                &::before
+                    bottom: -100%
+            
+
+            .portfolio__card-back
+                opacity: 1
+                transform: rotateY(0)
+            
+        &-front
+            position: relative
+            overflow: hidden
+            transition: transform 1s, opacity 1.5s
+            border: 2px solid $white
+            border-radius: 50% 50%
+            width: 100%
+            height: 100%
+            background-size: cover
+
+            &::before
+                content: ''
+                position: absolute
+                bottom: 0
+                transition: bottom 1.5s
+                width: 100%
+                height: 20%
+                background-color: $white
+                color: $dark-blue
+                text-align: center
+                font-weight: bold
+                font-size: 2rem
+                padding: 5px 5px 0
+
+            &--first 
+                background-image: url('../img/website1.png')
+                &::before
+                    content: 'Website'
+
+            &--second
+                background-image: url('../img/game1.png')
+                &::before
+                    content: 'Game'
+            
+        &-back
+            position: absolute
+            top: 0
+            left: 0
+            flex-direction: column 
+            justify-content: center
+            display: flex
+            opacity: 0
+            transform: rotateY(180deg)
+            transition: transform 1s, opacity 1.5s
+            border: 2px solid $white
+            border-radius: 50% 50%
+            width: 100%
+            height: 100%
+            padding: 5px
+            font-size: 1.4rem
+            text-align: center
+
+            p:nth-child(2)
+                margin: 10px 0
+
+            &-link
+                position: relative
+                display: inline-block
+                overflow: hidden
+                margin: 0 auto
+                border: 1px solid $white
+                border-radius: 15px
+                padding: 5px 10px
+                text-decoration: none
+                color: $white
+                &::before, &::after
+                    content: ''
+                    position: absolute
+                    width: 100%
+                    height: 50%
+                    background-color: $dark-red
+                    z-index: -1
+
+                &::before
+                    top: 0
+                    left: -100%
+                    transition: left .3s ease-in
+
+                &::after
+                    bottom: 0
+                    right: -100%
+                    transition: right .3s ease-in
+
+                &:hover::before
+                    left: 0
+
+                &:hover::after
+                    right: 0
 
 @media screen and ( min-width: 375px )
     //=============== NAVIGATION ===============
@@ -333,7 +456,7 @@ body
 
     .nav
         &__vertical
-            &__item
+            &-item
                 font-size: 4rem
 
     //================== MAIN ==================
@@ -350,21 +473,21 @@ body
             font-size: 2rem
             text-align: right
 
-    .bubbles
-        &__one
-            top: 50px
-            width: 130px
-            height: 130px
+        .bubbles
+            &__one
+                top: 50px
+                width: 130px
+                height: 130px
 
-        &__two
-            top: 200px
-            width: 100px
-            height: 100px
+            &__two
+                top: 200px
+                width: 100px
+                height: 100px
 
-        &__three
-            top: 350px
-            width: 80px
-            height: 80px
+            &__three
+                top: 350px
+                width: 80px
+                height: 80px
 
 
 @media screen and ( min-width: 400px )
@@ -373,23 +496,23 @@ body
     .about-me
         &__wrapper
             padding: 20px 0
-      
-        &__title
-            padding: 20px 0 10px 0
-            font-size: 2rem
-
+    
         &__description
             padding: 0 20px 30px 20px 
             font-size: 1.4rem
 
-            .education
+            &-title
+                padding: 20px 0 10px 0
+                font-size: 2rem
+
+            &-education
                 font-size: 1.4rem
        
-                &__main-description
+                &-main-text
                     width: 80%
                     padding-left: 10px
                     
-                &__year
+                &-year
                     width: 20%
                     padding-right: 10px
 
@@ -398,7 +521,7 @@ body
     //================ NAVIGATION ==============    
     .nav
         &__vertical
-            &__item
+            &-item
                 font-size: 5rem
 
     //================== MAIN ==================
@@ -415,21 +538,21 @@ body
             font-size: 2.7rem
             text-align: right
 
-    .bubbles
-        &__one
-            top: 50px
-            width: 170px
-            height: 170px
+        .bubbles
+            &__one
+                top: 50px
+                width: 170px
+                height: 170px
 
-        &__two
-            top: 250px
-            width: 130px
-            height: 130px
+            &__two
+                top: 250px
+                width: 130px
+                height: 130px
 
-        &__three
-            top: 400px
-            width: 100px
-            height: 100px
+            &__three
+                top: 400px
+                width: 100px
+                height: 100px
 
     //////////////// ABOUT ME PAGE ////////////////
     .about-me
@@ -437,10 +560,10 @@ body
             padding: 20px 20px
       
         &__description
-            .education
+            &-education
                 margin: 20px 0
 
-                &__main-description
+                &-main-text
                     position: relative
                     padding-left: 15px
 
@@ -452,7 +575,7 @@ body
                         width: 1px
                         background-color: $white
                         
-                &__year
+                &-year
                     position: relative
                     padding-right: 15px 
 

@@ -70,19 +70,19 @@
   font-size: 5.5rem;
 }
 
-.bubbles__one {
+.title-page .bubbles__one {
   left: 0px;
   width: 400px;
   height: 400px;
 }
 
-.bubbles__two {
+.title-page .bubbles__two {
   top: 400px;
   width: 300px;
   height: 300px;
 }
 
-.bubbles__three {
+.title-page .bubbles__three {
   top: 600px;
   width: 200px;
   height: 200px;
@@ -90,10 +90,6 @@
 
 .about-me {
   height: auto;
-}
-
-.about-me__title {
-  padding: 0 0 20px 0;
 }
 
 .about-me__wrapper {
@@ -120,21 +116,21 @@
   color: #ffffff;
 }
 
-.about-me__circle__text {
+.about-me__circle-text {
   position: relative;
   -webkit-transition: color .4s;
   transition: color .4s;
 }
 
-.about-me__circle__text--active {
+.about-me__circle-text--active {
   color: #8b0407;
 }
 
-.about-me__circle__text:hover {
+.about-me__circle-text:hover {
   color: #8b0407;
 }
 
-.about-me__circle__text span {
+.about-me__circle-text span {
   position: absolute;
 }
 
@@ -150,20 +146,24 @@
   pointer-events: none;
 }
 
+.about-me__description-title {
+  padding: 0 0 20px 0;
+}
+
 .about-me__description--active {
   opacity: 1;
   pointer-events: auto;
 }
 
-.about-me__description .aboutme {
+.about-me__description-about {
   padding: 0 50px;
 }
 
-.about-me__description .aboutme__download {
+.about-me__description-about-download {
   margin-top: 15px;
 }
 
-.about-me__description .skills p {
+.about-me__description-skills p {
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;
@@ -171,12 +171,12 @@
   width: 120px;
 }
 
-.about-me__description .skills p:hover {
+.about-me__description-skills p:hover {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
 }
 
-.about-me__description .education {
+.about-me__description-education {
   padding: 0 0 20px 0;
 }
 /*# sourceMappingURL=large.css.map */

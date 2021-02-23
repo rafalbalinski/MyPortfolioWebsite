@@ -43,7 +43,7 @@ let letterNumber = 0;
 function createRadialText(circleTextButtons, button){
     circleTextButtons.forEach((char) => {
         const charelement = document.createElement('span');
-        charelement.classList.add('about-me__circle__text__letter');
+        charelement.classList.add('about-me__circle-text-letter');
         charelement.innerText = char;
         const xpos = (circleHeight + 30) * Math.cos(angleToRadian(angle));
         const ypos = (circleHeight + 30) * Math.sin(angleToRadian(angle));
@@ -62,11 +62,11 @@ for(let i = 0; i < buttonsText.length; i++)
 const colorToSelectRoundText = () => {
     circleTextButtons.forEach( (selected, selectedIndex) => { 
         selected.addEventListener('click', function(){
-            selected.classList.add('about-me__circle__text--active');
+            selected.classList.add('about-me__circle-text--active');
             aboutMeDescriptions[selectedIndex].classList.add('about-me__description--active');
             circleTextButtons.forEach( (unselected, unselectedIndex) => { 
                 if(unselected !=selected){
-                    unselected.classList.remove('about-me__circle__text--active');
+                    unselected.classList.remove('about-me__circle-text--active');
                     aboutMeDescriptions[unselectedIndex].classList.remove('about-me__description--active');
                 }
             });
