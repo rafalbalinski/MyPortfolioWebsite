@@ -1,3 +1,8 @@
+// ================ DOM ================
+// circleTextButtons - text around white circle
+// aboutMeDescriptions - descriptions with infomrmation about me
+
+'use strict'
 function  angleToRadian (angle) { 
     return angle * (Math.PI / 180); 
 }
@@ -6,6 +11,18 @@ function charnumbers (buttons) {
     let quantity = 0;
     buttons.forEach( item => quantity += item.length);
     return quantity;
+}
+
+function addSpacesBetwenLetters(quantity){
+    let index=0;
+    for(let interval = 0; interval < quantity; interval++)
+        for(let i = 0; i < buttonsText.length; i++){
+            while (index <= buttonsTextSplit[i].length) {
+                buttonsTextSplit[i].splice(index, 0, '\xa0');
+                index += 2;
+            }
+            index = 0;
+        }
 }
 
 const buttonsText = new Array ();
@@ -42,29 +59,15 @@ function createRadialText(circleTextButtons, button){
 for(let i = 0; i < buttonsText.length; i++)
     createRadialText(buttonsTextSplit[i], circleTextButtons[i]);
 
-function addSpacesBetwenLetters(quantity){
-    let index=0;
-    for(let interval = 0; interval < quantity; interval++)
-        for(let i = 0; i < buttonsText.length; i++){
-            while (index <= buttonsTextSplit[i].length) {
-                buttonsTextSplit[i].splice(index, 0, '\xa0');
-                index += 2;
-            }
-            index = 0;
-        }
-}
-
-colorToSelectRoundText = () => {
+const colorToSelectRoundText = () => {
     circleTextButtons.forEach( (selected, selectedIndex) => { 
         selected.addEventListener('click', function(){
             selected.classList.add('about-me__circle__text--active');
             aboutMeDescriptions[selectedIndex].classList.add('about-me__description--active');
-            // aboutMeDescriptions[selectedIndex].style.opacity = "1";
             circleTextButtons.forEach( (unselected, unselectedIndex) => { 
                 if(unselected !=selected){
                     unselected.classList.remove('about-me__circle__text--active');
                     aboutMeDescriptions[unselectedIndex].classList.remove('about-me__description--active');
-                    // aboutMeDescriptions[unselectedIndex].style.opacity = "0";
                 }
             });
         });

@@ -1,3 +1,61 @@
+@-webkit-keyframes slideInDown {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@-webkit-keyframes slideInUp {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -200px;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -200px;
+  }
+}
+
+@-webkit-keyframes circleRotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes circleRotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .title-page__first-line {
   font-size: 7rem;
 }
@@ -39,36 +97,33 @@
 }
 
 .about-me__wrapper {
-  height: 100vh;
-  width: 100vw;
-  min-height: 900px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  min-height: 900px;
+  height: 100vh;
+  width: 100vw;
   padding: 80px 0;
 }
 
 .about-me__circle {
-  display: block;
   position: relative;
-  width: 700px;
-  height: 700px;
-  color: #ffffff;
-  border-radius: 50% 50%;
-  border: 2px solid #ffffff;
-  font-size: 2rem;
-  font-weight: bold;
+  display: block;
   -webkit-animation: circleRotation 60s linear infinite;
           animation: circleRotation 60s linear infinite;
+  border: 2px solid #ffffff;
+  border-radius: 50% 50%;
+  width: 700px;
+  height: 700px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .about-me__circle__text {
+  position: relative;
   -webkit-transition: color .4s;
   transition: color .4s;
-  position: relative;
 }
 
 .about-me__circle__text--active {
@@ -85,31 +140,35 @@
 
 .about-me__description {
   position: absolute;
-  width: 600px;
-  height: 400px;
-  padding: 0;
   opacity: 0;
   -webkit-transition: opacity .4s;
   transition: opacity .4s;
+  width: 600px;
+  height: 400px;
+  padding: 0;
   letter-spacing: .5px;
   pointer-events: none;
 }
 
 .about-me__description--active {
-  pointer-events: auto;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .about-me__description .aboutme {
   padding: 0 50px;
 }
 
+.about-me__description .aboutme__download {
+  margin-top: 15px;
+}
+
 .about-me__description .skills p {
-  width: 120px;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;
   transition: transform .3s, -webkit-transform .3s;
+  width: 120px;
 }
 
 .about-me__description .skills p:hover {

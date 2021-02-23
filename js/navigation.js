@@ -1,3 +1,10 @@
+// ================ DOM ================
+// navHorizontalItems - horizontal navigation buttons
+// burgerBtn - burger button
+// burgerBtnBars - burger button bars
+// navVertical - vertical navigation 
+// navVerticalItems - vertical navigation buttons
+
 'use strict'
 class Navigation {
     constructor() {

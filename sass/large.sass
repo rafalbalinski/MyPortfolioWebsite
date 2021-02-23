@@ -1,4 +1,5 @@
 @import './colors'
+@import './animations'
 
 //======================= MAIN =======================
 ///////////////////// TITLE PAGE /////////////////////
@@ -31,37 +32,35 @@
         height: 200px
 
 
-///////////////////// ABOUT ME PAGE /////////////////////
+/////////////////// ABOUT ME PAGE ///////////////////
 .about-me
     height: auto
   
     &__title
         padding: 0 0 20px 0
 
-  
     &__wrapper
+        justify-content: center
+        min-height: 900px
         height: 100vh
         width: 100vw
-        min-height: 900px
-        justify-content: center
-        align-items: center
         padding: 80px 0
         
     &__circle
-        display: block
         position: relative
+        display: block
+        animation: circleRotation 60s linear infinite
+        border: 2px solid $white
+        border-radius: 50% 50% 
         width: 700px
         height: 700px
-        color: $white
-        border-radius: 50% 50% 
-        border: 2px solid $white
         font-size: 2rem
         font-weight: bold
-        animation: circleRotation 60s linear infinite
+        color: $white
         
         &__text
-            transition: color .4s
             position: relative
+            transition: color .4s
 
             &--active
                 color: $dark-red
@@ -74,25 +73,29 @@
 
     &__description
         position: absolute
+        opacity: 0
+        transition: opacity .4s
         width: 600px
         height: 400px
         padding: 0
-        opacity: 0
-        transition: opacity .4s
         letter-spacing: .5px
         pointer-events: none
 
         &--active
-            pointer-events: auto
             opacity: 1
+            pointer-events: auto
 
         .aboutme
             padding: 0 50px
+    
+            &__download
+                margin-top: 15px
 
         .skills
             p
-                width: 120px
                 transition: transform .3s
+                width: 120px
+
                 &:hover
                     transform: scale(1.3)
 

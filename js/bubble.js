@@ -1,3 +1,8 @@
+// ================ DOM ================
+// bubbles - three bubbles on title page
+// titlePage - first page with bubbles
+
+'use strict'
 class Bubble {
     constructor(bubble, dx, dy) {
         this.dx = dx;

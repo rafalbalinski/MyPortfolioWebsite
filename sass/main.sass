@@ -1,5 +1,6 @@
 @import './colors'
-    
+@import './animations'
+
 //////////////////////// RESET ////////////////////////
 *,
 *::before,
@@ -9,7 +10,6 @@
     padding: 0
     cursor: none
 
-
 html 
     scroll-behavior: smooth
     overflow-y: scroll
@@ -17,119 +17,122 @@ html
 
 body 
     position: relative
+    overflow: hidden
+    background-color: $dark-blue
     font-family: 'Roboto', sans-serif
     font-size: 1.6rem
-    background-color: $dark-blue
-    overflow: hidden
-    
 
+//////////////////////// GLOBAL OBJECTS ////////////////////////
 .cursor-circle
-    pointer-events: none
     position: absolute
+    z-index: 100
     top: 0
     left: 0
-    display: flex;
     justify-content: center
     align-items: center
-    width: 30px
-    height: 30px
-    border: 2px solid white
-    border-radius: 50% 50%
-    font-size: 1.8rem
-    font-weight: bold
+    display: flex
     transform: translate(-50%, -50%)
     transition: width .3s, height .3s
-    z-index: 100
+    border: 2px solid white
+    border-radius: 50% 50%
+    width: 30px
+    height: 30px
+    font-size: 1.8rem
+    font-weight: bold
+    pointer-events: none
+
+    &--active
+        width: 60px
+        height: 60px
 
     &--active-nav
         width: 120px
         height: 120px
         background-color: $white
 
-    &--active-burgerbtn
-        width: 60px
-        height: 60px
-
 
 //======================= NAVIGATION =======================
 .burger-btn
     position: fixed
+    z-index: 10
     top: 0px
     right: 0px
-    display: flex
     flex-direction: column
-    align-items: center
     justify-content: center
+    align-items: center
+    display: flex
+    transform: translateX(150%)
+    transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1)
+    border: 1px solid transparent
     width: 80px
     height: 80px
-    border: 1px solid transparent
     background: none
-    transform: translateX(150%)
-    transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1);
     cursor: none
     outline: none
-    z-index: 10
 
     &--show
         transform: translateX(0)
 
     &__bars
+        transition: transform .8s
         margin: 2px 0 
         width: 30px
         height: 2px
         background-color: $light-white
-        transition: transform .8s
+
         &--active
             &:nth-child(1)
                 transform: translateY(3px) 
+
             &:nth-child(2)
                 transform: translateY(-3px) 
             
 .nav
     &__horizontal
         position: fixed
-        display: flex
+        z-index: 9
         justify-content: flex-end
         align-items: flex-end
-        padding-right: 70px
+        display: flex
         height: 50px
         width: 100vw
+        padding-right: 70px
         font-weight: bold
-        z-index: 9
 
         &__item
             position: relative
             top: -200px
             margin-left: 40px
-            color: white
             font-size: 1.9rem
+            color: white
             text-decoration: none
 
     &__vertical
         position: fixed
-        display: flex
+        z-index: 9
         flex-direction: column
         justify-content: center
         align-items: center
-        height: 100vh
-        width: 100vw
-        background-color: $dark-blue
+        display: flex
         transform: translateX(-100%)
         transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1);
-        z-index: 9
+        width: 100vw
+        height: 100vh
+        background-color: $dark-blue
+
         &--active
             transform: translateX(0)
 
         &__item
             position: relative
             display: block
-            margin: 10px 0
-            color: $white
-            font-size: 3rem
-            text-decoration: none
-            letter-spacing: -1px
             transform: translateX(-3000px)
             transition: transform 1s cubic-bezier(0.65, 0.05, 0.36, 1)
+            margin: 10px 0
+            font-size: 3rem
+            letter-spacing: -1px
+            color: $white
+            text-decoration: none
 
             &:hover::after
                 transform: scaleX(1)
@@ -137,17 +140,16 @@ body
             &::after
                 content: ''
                 position: absolute
+                z-index: 0
                 bottom: 0
                 left: 0
+                transform: scaleX(0)
+                transition: transform .3s
                 width: 100%
                 height: 5px
                 background-color: $white
-                z-index: 0
-                transform: scaleX(0)
-                transition: transform .3s
 
             &--active
-                
                 transform: translateX(0)
                 &:nth-child(1)
                     transition-delay: .1s
@@ -157,18 +159,18 @@ body
                     transition-delay: .5s
                 &:nth-child(4)
                     transition-delay: .7s
-                    
+
 
 //======================= MAIN =======================
 ///////////////////// TITLE PAGE /////////////////////
 .title-page
-    display: flex
+    z-index: 8
     justify-content: center
     align-items: center
+    display: flex
     height: 100vh
     width: 100vw
     background-color: $dark-blue
-    z-index: 8
 
     &__hero-text
         color: $white
@@ -186,9 +188,9 @@ body
 
 .bubbles
     position: absolute
+    z-index: 7
     border-radius: 50% 50%
     background-color: $transparent-white
-    z-index: 7
 
     &__one
         top: 50px
@@ -205,66 +207,107 @@ body
         width: 50px
         height: 50px
         
+
 ///////////////////// ABOUT ME PAGE /////////////////////
 .about-me
+    z-index: 8
     height: auto
     width: 100vw
     background-color: $semi-dark-blue
     color: $white
-    z-index: 8
     
     &__circle
         display: none
 
     &__wrapper
         position: relative
-        height: 100%
-        width: 100%
-        padding: 20px 0
-        display: flex
         flex-direction: column
         align-items: center
+        display: flex
+        width: 100%
+        height: 100%
+        padding: 20px 0
 
     &__title
-        text-transform: uppercase
         padding: 20px 0 10px 0
-        text-align: center
         font-size: 2rem
+        text-align: center
+        text-transform: uppercase
 
     &__description
         position: relative
+        width: 100%
         padding: 0 20px 40px 20px 
         font-size: 1.4rem
-        width: 100%
         text-align: center
 
+        .aboutme
+            &__download
+                position: relative
+                z-index: 8
+                display: inline-block
+                overflow: hidden
+                margin-top: 10px
+                border: 1px solid $white
+                border-radius: 15px
+                padding: 8px 12px
+                font-size: 1.3rem
+                color: $white
+                text-decoration: none
+        
+                &::before, &::after
+                    content: ''
+                    position: absolute
+                    width: 100%
+                    height: 50%
+                    background-color: $dark-red
+                    z-index: -1
+
+                &::before
+                    top: 0
+                    left: -100%
+                    transition: left .3s ease-in
+
+                &::after
+                    bottom: 0
+                    right: -100%
+                    transition: right .3s ease-in
+
+                &:hover::before
+                    left: 0
+
+                &:hover::after
+                    right: 0
+
         .skills
-            display: flex
             justify-content: center
             align-items: center
             flex-wrap: wrap
+            display: flex
             font-size: 3rem
+
             p
                 width: 100px
                 margin: 20px 0
                 font-weight: bold
+
             span
-                font-size: 1.5rem
                 display: block
+                font-size: 1.5rem
                 font-weight: normal
 
         .education
-            width: 100%
-            display: flex
             position: relative
-            font-size: 1.4rem
+            display: flex
             margin: 10px 0
+            width: 100%
+            font-size: 1.4rem
 
             &__main-description
                 width: 85%
+                padding-left: 10px
                 text-align: left
                 font-weight: bold
-                padding-left: 10px
 
             &__secondary-description
                 font-weight: normal
@@ -275,28 +318,26 @@ body
                 text-align: right
 
 
-
-    ///////////////////// PORTFOLIO PAGE /////////////////////
-    .portfolio
-        height: 100vh
-        width: 100vw
-        background-color: $dark-blue
+///////////////////// PORTFOLIO PAGE /////////////////////
+.portfolio
+    height: 100vh
+    width: 100vw
+    background-color: $dark-blue
 
 
 @media screen and ( min-width: 375px )
-    //======================= NAVIGATION =======================
+    //=============== NAVIGATION ===============
     .burger-btn
         top: 10px
         right: 20px
 
-    
     .nav
         &__vertical
             &__item
                 font-size: 4rem
 
-    //======================= MAIN =======================
-    ///////////////////// TITLE PAGE /////////////////////
+    //================== MAIN ==================
+    //////////////// TITLE PAGE ////////////////
     .title-page
         &__first-line
             font-size: 2rem
@@ -306,8 +347,8 @@ body
             line-height: 4rem
 
         &__third-line
-            text-align: right
             font-size: 2rem
+            text-align: right
 
     .bubbles
         &__one
@@ -326,10 +367,9 @@ body
             height: 80px
 
 
-
 @media screen and ( min-width: 400px )
-    //======================= MAIN =======================
-    ///////////////////// ABOUT ME PAGE /////////////////////
+    //================== MAIN ==================
+    /////////////// ABOUT ME PAGE //////////////
     .about-me
         &__wrapper
             padding: 20px 0
@@ -355,14 +395,14 @@ body
 
     
 @media screen and ( min-width: 540px )
-    //======================= NAVIGATION =======================    
+    //================ NAVIGATION ==============    
     .nav
         &__vertical
             &__item
                 font-size: 5rem
 
-    //======================= MAIN =======================
-    ///////////////////// TITLE PAGE /////////////////////    
+    //================== MAIN ==================
+    //////////////// TITLE PAGE ////////////////    
     .title-page
         &__first-line
             font-size: 3.2rem
@@ -372,8 +412,8 @@ body
             line-height: 5rem
 
         &__third-line
-            text-align: right
             font-size: 2.7rem
+            text-align: right
 
     .bubbles
         &__one
@@ -391,7 +431,7 @@ body
             width: 100px
             height: 100px
 
-    ///////////////////// ABOUT ME PAGE /////////////////////
+    //////////////// ABOUT ME PAGE ////////////////
     .about-me
         &__wrapper
             padding: 20px 20px
@@ -399,16 +439,19 @@ body
         &__description
             .education
                 margin: 20px 0
+
                 &__main-description
                     position: relative
                     padding-left: 15px
+
                     &::before
                         content: ''
                         position: absolute
+                        left: -2px
                         height: 100%
                         width: 1px
-                        left: -2px
                         background-color: $white
+                        
                 &__year
                     position: relative
                     padding-right: 15px 
@@ -416,8 +459,8 @@ body
                     &::before
                         content: ''
                         position: absolute
+                        right: -2px
+                        border-radius: 50%
                         height: 8px
                         width: 8px
-                        border-radius: 50%
-                        right: -2px
                         background-color: $white
