@@ -324,13 +324,14 @@ body
     height: auto
     background-color: $dark-blue
     color: white
+    &__wrapper
+        padding: 20px 80px
 
     &__title
         padding: 30px 0 40px 0
         font-size: 2rem
-        font-weight: bold
+        font-weight: normal
         text-align: center
-        text-transform: uppercase
 
     &__wrapper
         justify-content: center
@@ -384,12 +385,12 @@ body
                 padding: 5px 5px 0
 
             &--first 
-                background-image: url('../img/website1.png')
+                background-image: $dark-blue-gradient, url('../img/website1.png')
                 &::before
                     content: 'Website'
 
             &--second
-                background-image: url('../img/game1.png')
+                background-image: $dark-blue-gradient, url('../img/game1.png')
                 &::before
                     content: 'Game'
             
@@ -447,6 +448,16 @@ body
 
                 &:hover::after
                     right: 0
+
+
+.footer
+    &__text
+        border-top: 1px solid $semi-white
+        color: $white
+        padding: 10px 0 
+        text-align: center
+    
+
 
 @media screen and ( min-width: 375px )
     //=============== NAVIGATION ===============

@@ -179,4 +179,48 @@
 .about-me__description-education {
   padding: 0 0 20px 0;
 }
+
+.portfolio {
+  min-height: 100vh;
+}
+
+.portfolio__title {
+  padding: 60px 0 50px 0;
+}
+
+.portfolio__wrapper {
+  padding: 0 90px;
+}
+
+.portfolio__card {
+  margin: 40px 50px;
+  width: 300px;
+  height: 300px;
+}
+
+.portfolio__card-front::before {
+  font-size: 2.5rem;
+  padding: 10px 5px 0;
+}
+
+.portfolio__card-back {
+  padding: 5px;
+  font-size: 1.8rem;
+}
+
+.portfolio__card-back p:nth-child(2) {
+  margin: 20px 0;
+}
+
+.portfolio__card-back-link {
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+@media screen and (min-width: 1700px) {
+  .portfolio__wrapper {
+    padding: 0 150px;
+  }
+}
 /*# sourceMappingURL=large.css.map */

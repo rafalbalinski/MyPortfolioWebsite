@@ -16,3 +16,5 @@ const circleBorder = aboutMeSection.querySelector('.about-me__circle');         
 const circleTextButtons = aboutMeSection.querySelectorAll('.about-me__circle-text');                //text around white circle
 const aboutMeDescriptions = aboutMeSection.querySelectorAll('.about-me__description');              // descriptions with infomrmation about me
 const CVDownloadButton = aboutMeSection.querySelector('.about-me__description-about-download');     // button to download CV in about Me section
+
+const footerYear = document.querySelector('.footer__year');                                         //Year in footer section

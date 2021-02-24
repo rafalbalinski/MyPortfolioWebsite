@@ -46,6 +46,40 @@
   width: 20%;
 }
 
+.portfolio__title {
+  padding: 40px 0 50px 0;
+}
+
+.portfolio__wrapper {
+  padding: 0 70px;
+}
+
+.portfolio__card {
+  margin: 20px 30px;
+  width: 250px;
+  height: 250px;
+}
+
+.portfolio__card-front::before {
+  font-size: 2.5rem;
+  padding: 5px 5px 0;
+}
+
+.portfolio__card-back {
+  padding: 5px;
+  font-size: 1.8rem;
+}
+
+.portfolio__card-back p:nth-child(2) {
+  margin: 20px 0;
+}
+
+.portfolio__card-back-link {
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
 @media screen and (min-width: 840px) {
   .about-me__wrapper {
     padding: 20px 100px;
