@@ -570,6 +570,7 @@ h3.section-title {
   width: 100%;
   height: 100%;
   background-size: cover;
+  font-size: 0.2rem;
 }
 
 .portfolio__card-front::before {
@@ -584,12 +585,12 @@ h3.section-title {
   color: #020b15;
   text-align: center;
   font-weight: bold;
-  font-size: 2rem;
   padding: 5px 5px 0;
+  font-size: 1.5rem;
 }
 
 .portfolio__card-front--first {
-  background-image: linear-gradient(45deg, rgba(9, 18, 27, 0.6), rgba(2, 11, 27, 0.6)), url("../img/website1.png");
+  background-image: linear-gradient(45deg, rgba(9, 18, 27, 0.6), rgba(2, 11, 27, 0.6)), url("../img/ProGamers_Icon.jpg");
 }
 
 .portfolio__card-front--first::before {
@@ -597,11 +598,43 @@ h3.section-title {
 }
 
 .portfolio__card-front--second {
-  background-image: linear-gradient(45deg, rgba(9, 18, 27, 0.6), rgba(2, 11, 27, 0.6)), url("../img/game1.png");
+  background-image: linear-gradient(45deg, rgba(9, 18, 27, 0.6), rgba(2, 11, 27, 0.6)), url("../img/TropicalParadise_Icon.jpg");
 }
 
 .portfolio__card-front--second::before {
-  content: 'Game';
+  content: 'Website';
+}
+
+.portfolio__card-front--third {
+  background-image: linear-gradient(45deg, rgba(9, 18, 27, 0.6), rgba(2, 11, 27, 0.6)), url("../img/WeatherApp_Icon.jpg");
+}
+
+.portfolio__card-front--third::before {
+  content: 'Web Application';
+}
+
+.portfolio__card-front--fourth {
+  background-image: linear-gradient(45deg, rgba(9, 18, 27, 0.6), rgba(2, 11, 27, 0.6)), url("../img/ToDoList_Icon.jpg");
+}
+
+.portfolio__card-front--fourth::before {
+  content: 'Web Application';
+}
+
+.portfolio__card-front--fifth {
+  background-image: linear-gradient(45deg, rgba(9, 18, 27, 0.6), rgba(2, 11, 27, 0.6)), url("../img/EasyWords_Icon.jpg");
+}
+
+.portfolio__card-front--fifth::before {
+  content: 'Web Application';
+}
+
+.portfolio__card-front--sixth {
+  background-image: linear-gradient(45deg, rgba(9, 18, 27, 0.6), rgba(2, 11, 27, 0.6)), url("../img/AngularToDoList_Icon.jpg");
+}
+
+.portfolio__card-front--sixth::before {
+  content: 'Web Application';
 }
 
 .portfolio__card-back {
@@ -679,63 +712,6 @@ h3.section-title {
 
 .portfolio__card-back-link:hover::after {
   right: 0;
-}
-
-.contact {
-  color: #ffffff;
-  background-color: #09121b;
-}
-
-.contact__boxes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.contact__box {
-  padding: 20px 0;
-  width: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.contact__box:nth-child(2) {
-  text-align: center;
-}
-
-.contact__box-title {
-  font-size: 1.5rem;
-  text-align: center;
-  display: inline-block;
-}
-
-.contact__box-list {
-  display: inline-block;
-  width: 150px;
-  list-style: none;
-}
-
-.contact__box-list-link {
-  color: #ffffff;
-  text-decoration: none;
 }
 
 .footer {
