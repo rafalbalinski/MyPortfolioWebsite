@@ -46,10 +46,6 @@
   width: 20%;
 }
 
-.portfolio__title {
-  padding: 40px 0 50px 0;
-}
-
 .portfolio__wrapper {
   padding: 0 70px;
 }
@@ -92,6 +88,9 @@
   }
   .about-me__description-education-year {
     width: 25%;
+  }
+  .footer__text {
+    font-size: 1.6rem;
   }
 }
 

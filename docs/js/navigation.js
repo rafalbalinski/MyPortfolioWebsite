@@ -14,14 +14,12 @@ class Navigation {
         navHorizontalItems[0].style.animation = 'slideInDown .8s forwards ';
         navHorizontalItems[1].style.animation = 'slideInDown .8s .3s forwards ';
         navHorizontalItems[2].style.animation = 'slideInDown .8s .6s forwards ';
-        navHorizontalItems[3].style.animation = 'slideInDown .8s .9s forwards ';
     }
 
     closeHorizontalMenu() {
         navHorizontalItems[0].style.animation = 'slideInUp .8s forwards ';
         navHorizontalItems[1].style.animation = 'slideInUp 1.2s forwards ';
-        navHorizontalItems[3].style.animation = 'slideInUp 1.9s forwards ';
-        navHorizontalItems[2].style.animation = 'slideInUp 1.5s forwards ';
+        navHorizontalItems[2].style.animation = 'slideInUp 1.9s forwards ';
     }
 
     showVerticalMenu() {

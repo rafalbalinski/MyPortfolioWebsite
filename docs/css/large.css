@@ -177,15 +177,11 @@
 }
 
 .about-me__description-education {
-  padding: 0 0 20px 0;
+  padding: 0 30px 15px 0;
 }
 
 .portfolio {
   min-height: 100vh;
-}
-
-.portfolio__title {
-  padding: 60px 0 50px 0;
 }
 
 .portfolio__wrapper {
@@ -216,6 +212,10 @@
   margin: 0 auto;
   border-radius: 15px;
   padding: 5px 10px;
+}
+
+.footer__text {
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 1700px) {

@@ -1,3 +1,8 @@
+h3.section-title {
+  padding: 30px 0 30px 0;
+  font-size: 4rem;
+}
+
 .nav__vertical-item {
   font-size: 5rem;
 }
@@ -50,9 +55,8 @@
   font-size: 1.5rem;
 }
 
-.portfolio__title {
-  padding: 30px 0 40px 0;
-  font-size: 4rem;
+.footer__text {
+  font-size: 1.4rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -67,6 +71,9 @@
   }
   .about-me__description-education {
     font-size: 1.6rem;
+  }
+  .footer__text {
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=small.css.map */

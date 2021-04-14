@@ -1,7 +1,8 @@
 @import './colors'
 @import './animations'
 
-//////////////////////// RESET ////////////////////////
+
+//======================= RESET =======================
 *,
 *::before,
 *::after 
@@ -22,7 +23,8 @@ body
     font-family: 'Roboto', sans-serif
     font-size: 1.6rem
 
-//////////////////////// GLOBAL OBJECTS ////////////////////////
+
+//======================= GLOBAL OBJECTS =======================
 .cursor-circle
     position: absolute
     z-index: 100
@@ -50,6 +52,13 @@ body
         height: 120px
         background-color: $white
 
+h3.section-title
+    padding: 30px 0 15px 0
+    font-size: 2rem
+    font-weight: bold
+    text-transform: uppercase
+    text-align: center
+        
 
 //======================= NAVIGATION =======================
 .burger-btn
@@ -327,12 +336,6 @@ body
     &__wrapper
         padding: 20px 80px
 
-    &__title
-        padding: 30px 0 40px 0
-        font-size: 2rem
-        font-weight: normal
-        text-align: center
-
     &__wrapper
         justify-content: center
         flex-wrap: wrap
@@ -449,12 +452,49 @@ body
                 &:hover::after
                     right: 0
 
+///////////////////// CONTACT PAGE /////////////////////
+.contact
+    color: $white
+    background-color: $semi-dark-blue
+    &__boxes
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
 
+    &__box
+        padding: 20px 0
+        width: 300px
+        display: flex
+        align-items: center
+        flex-direction: column
+
+        &:nth-child(2)
+            text-align: center
+
+        &-title
+            font-size: 1.5rem
+            text-align: center
+            display: inline-block
+
+        &-list
+            display: inline-block
+            width: 150px
+            list-style: none
+
+            &-link
+                color: $white
+                text-decoration: none
+
+//======================= FOOTER =======================
 .footer
+    background-color: $semi-dark-blue
+
     &__text
         border-top: 1px solid $semi-white
         color: $white
         padding: 10px 0 
+        font-size: 1rem
         text-align: center
     
 
@@ -527,7 +567,12 @@ body
                     width: 20%
                     padding-right: 10px
 
-    
+    //================== FOOTER ==================
+    .footer
+        &__text
+            font-size: 1.5rem
+        
+
 @media screen and ( min-width: 540px )
     //================ NAVIGATION ==============    
     .nav
@@ -598,3 +643,13 @@ body
                         height: 8px
                         width: 8px
                         background-color: $white
+
+    //////////////// CONTACT PAGE ////////////////
+    .contact
+        padding-bottom: 20px 
+        &__boxes
+            display: flex
+            flex-direction: row
+
+        &__box
+            padding: 0

@@ -118,6 +118,14 @@ body {
   background-color: #ffffff;
 }
 
+h3.section-title {
+  padding: 30px 0 15px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 .burger-btn {
   position: fixed;
   z-index: 10;
@@ -511,13 +519,6 @@ body {
   padding: 20px 80px;
 }
 
-.portfolio__title {
-  padding: 30px 0 40px 0;
-  font-size: 2rem;
-  font-weight: normal;
-  text-align: center;
-}
-
 .portfolio__wrapper {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -680,10 +681,72 @@ body {
   right: 0;
 }
 
+.contact {
+  color: #ffffff;
+  background-color: #09121b;
+}
+
+.contact__boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact__box {
+  padding: 20px 0;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact__box:nth-child(2) {
+  text-align: center;
+}
+
+.contact__box-title {
+  font-size: 1.5rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.contact__box-list {
+  display: inline-block;
+  width: 150px;
+  list-style: none;
+}
+
+.contact__box-list-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #09121b;
+}
+
 .footer__text {
   border-top: 1px solid #ffffff8a;
   color: #ffffff;
   padding: 10px 0;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -745,6 +808,9 @@ body {
   .about-me__description-education-year {
     width: 20%;
     padding-right: 10px;
+  }
+  .footer__text {
+    font-size: 1.5rem;
   }
 }
 
@@ -808,6 +874,21 @@ body {
     height: 8px;
     width: 8px;
     background-color: #ffffff;
+  }
+  .contact {
+    padding-bottom: 20px;
+  }
+  .contact__boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .contact__box {
+    padding: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
